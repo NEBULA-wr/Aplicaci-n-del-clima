@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/css/main.76c75378.css",
+    "main.js": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/js/main.08e1554e.js",
+    "static/js/453.adf6c3b9.chunk.js": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/js/453.adf6c3b9.chunk.js",
+    "index.html": "/NEBULA-wr/Aplicaci-n-del-clima.git/index.html",
+    "main.76c75378.css.map": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/css/main.76c75378.css.map",
+    "main.08e1554e.js.map": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/js/main.08e1554e.js.map",
+    "453.adf6c3b9.chunk.js.map": "/NEBULA-wr/Aplicaci-n-del-clima.git/static/js/453.adf6c3b9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76c75378.css",
+    "static/js/main.08e1554e.js"
+  ]
+}
