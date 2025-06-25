@@ -1,7 +1,7 @@
 {
   "name": "clima-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/NEBULA-wr/Aplicaci-n-del-clima.git",
+  "homepage": "https://NEBULA-wr.github.io/app-clima",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
