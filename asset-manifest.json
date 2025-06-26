@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Aplicaci-n-del-clima/static/css/main.76c75378.css",
+    "main.js": "/Aplicaci-n-del-clima/static/js/main.b6b3568a.js",
+    "static/js/453.adf6c3b9.chunk.js": "/Aplicaci-n-del-clima/static/js/453.adf6c3b9.chunk.js",
+    "index.html": "/Aplicaci-n-del-clima/index.html",
+    "main.76c75378.css.map": "/Aplicaci-n-del-clima/static/css/main.76c75378.css.map",
+    "main.b6b3568a.js.map": "/Aplicaci-n-del-clima/static/js/main.b6b3568a.js.map",
+    "453.adf6c3b9.chunk.js.map": "/Aplicaci-n-del-clima/static/js/453.adf6c3b9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76c75378.css",
+    "static/js/main.b6b3568a.js"
+  ]
+}
