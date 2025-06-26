@@ -1,14 +1,123 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+/* --- Fuentes e Importaciones --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #e0e0e0; }
+
+/* --- CONTENEDOR GENERAL --- */
+.weather-app {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  min-height: 100vh; padding: 2rem; position: relative;
+}
+
+/* --- PANTALLA DE INTRODUCCIÓN --- */
+.intro-screen { text-align: center; color: #fff; }
+.intro-icon { font-size: 5rem; margin-bottom: 1.5rem; color: #fff; }
+.intro-screen h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+.intro-screen p { font-size: 1.2rem; font-weight: 300; max-width: 450px; color: rgba(255, 255, 255, 0.8); }
+
+/* --- FORMULARIO DE BÚSQUEDA (Centrado arriba) --- */
+.search-form-container { width: 100%; max-width: 600px; margin-bottom: 2rem; }
+.search-form { display: flex; gap: 12px; }
+.search-input { 
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+
+.search-button { /* ... (mismos estilos que la versión anterior) ... */
+   
+    flex-shrink: 0;
+    width: 50px; height: 50px;
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.25rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ 
+.search-input {
+  width: 100%; padding: 14px 20px; font-size: 1rem;
+  background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; color: #fff; outline: none; transition: all 0.3s ease;
+}
+.search-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+.search-input:focus { background: rgba(0, 0, 0, 0.3); border-color: rgba(255, 255, 255, 0.3); }
+
+.search-button {
+  flex-shrink: 0; width: 52px; height: 52px;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  border: none; border-radius: 12px; color: #fff; cursor: pointer; font-size: 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.search-button:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(99, 102, 241, 0.5); }
+
+
+/* --- LAYOUT DE RESULTADOS --- */
+.app-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+@media (min-width: 768px) {
+  .app-layout { grid-template-columns: 400px 1fr; }
+}
+
+/* --- TARJETA DE DATOS DEL CLIMA --- */
+.weather-display {
+  background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.main-info { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+.weather-icon { width: 120px; height: 120px; margin-left: -20px; }
+.temperature { font-size: 5rem; font-weight: 700; }
+.temperature sup { font-size: 2.5rem; }
+.weather-description { font-size: 1.2rem; text-transform: capitalize; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.8); }
+
+.details-grid, .sunrise-sunset {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; text-align: center; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.details-grid { margin-bottom: 1.5rem; }
+
+/* ESTE ES EL ARREGLO PARA LA PARTE DE ABAJO */
+.detail-item { display: flex; flex-direction: column; align-items: center; }
+.detail-item .icon { font-size: 2rem; margin-bottom: 0.5rem; color: #6366f1; }
+.detail-item .value { font-size: 1.1rem; font-weight: 500; }
+.detail-item .label { font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
+
+/* --- TARJETA DE INFO DE LA CIUDAD --- */
+.city-info-card {
+  background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.city-image { width: 100%; height: 200px; object-fit: cover; }
+.city-text { padding: 1.5rem; }
+.city-text h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+.city-text p { font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
+.city-info-card.placeholder { padding: 1.5rem; text-align: center; }
+
+/* --- MENSAJES DE ESTADO --- */
+.status-message {
+  text-align: center; font-weight: 300; font-size: 1.1rem;
+  background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px);
+  border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
+}
